@@ -1,0 +1,90 @@
+:root {
+    font-size: calc(.6em + .5vw);
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1em;
+    margin: 0;
+    background-color: #7fffd4;
+}
+
+footer {
+    text-align: center;
+}
+
+.container {
+    display: block;
+    height: 90vh;
+    width: 100vw;
+}
+
+.header {
+}
+
+.header img {
+    width: 10vw;
+    float: left;
+}
+
+.header div {
+    float: right;
+    margin-top: 8vw;
+    margin-right: 5em;
+}
+
+.header div p {
+    display: flex;
+}
+
+.content {
+    position: absolute;
+    border-spacing: 0 .5em;
+    background-color: #329da8;
+    top:50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%, 0);
+    padding: 2em;
+    border-radius: .7em;
+    --divider: 2px solid grey;
+}
+
+.content a {
+    padding: .2em 1em .2em;
+    font-weight: bold;
+    border-left: var(--divider);
+}
+
+.content label {
+    margin-top: 1em;
+    display: block;
+    text-align: center;
+}
+
+.content input {
+    margin-bottom: 1em;
+    display: block;
+    width: 100%;
+    border-radius: 1em;
+    padding: .2em .5em;
+    font-size: .6em;
+}
+
+.content button {
+    display: block;
+    margin: 1em auto;
+    padding: .2em 1em;
+    border: #4caf50 solid;
+    border-radius: 2em;
+    background-color: #4caf50;
+}
+
+.content .last-element {
+    border-right: var(--divider);
+}
