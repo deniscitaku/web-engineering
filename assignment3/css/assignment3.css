@@ -45,7 +45,6 @@ footer {
 
 .content {
     position: absolute;
-    border-spacing: 0 .5em;
     background-color: #329da8;
     top:50%;
     left: 50%;
