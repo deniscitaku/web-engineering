@@ -1,0 +1,209 @@
+:root {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+body * + * {
+    margin-top: 1.5em;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, serif;
+    text-align: center;
+    --primary-color: #604cd2;
+    --secondary-color: #f336ff;
+}
+
+button {
+    padding: 1em 1.2em;
+    border-radius: 1.5em;
+    border-width: 0;
+    color: white;
+    font-size: .7em;
+    text-transform: capitalize;
+}
+
+i {
+    color: var(--primary-color);
+}
+
+h1, h2, h3, h4, sub {
+    text-transform: capitalize;
+}
+
+
+.separator {
+    height: 1px;
+    background-color: lightgrey;
+    margin: 0 45%;
+}
+
+.separator hr {
+    width: 30%;
+    margin: 0 35%;
+    height: 4px;
+    position: center;
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+
+.primary {
+    background-color: var(--primary-color);
+}
+
+.secondary {
+    background-color: var(--secondary-color);
+}
+
+.main-container {
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 100vh;
+}
+
+.main-container img {
+    opacity: 30%;
+    width: 100%;
+    height: 100%;
+}
+.main-container .center-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: WHITE;
+}
+
+.main-container .center-content h1 {
+    margin-top: 0;
+}
+
+.main-container .center-content p {
+    font-size: .8rem;
+    text-transform: uppercase;
+}
+
+.main-container .center-content button {
+    margin-right: .2em;
+}
+
+.first-container h2 {
+    margin-top: 2em;
+}
+
+.first-container p {
+    color: #848484;
+}
+
+.tile-container {
+    display: flex;
+    max-width: 50%;
+    justify-content: space-around;
+    margin: 1em auto;
+    line-height: 1.4;
+}
+
+.tile-container .tile {
+    flex: 1;
+    align-self: center;
+    margin: 1.2em 2em;
+}
+
+
+.second-container {
+    position: relative;
+    background-color: var(--primary-color);
+    height: 20em;
+}
+
+.second-container img {
+    opacity: 30%;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+.second-container h2 {
+    text-transform: uppercase;
+    margin: 0 auto;
+}
+
+.second-container .center-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.circle-outline {
+    height: 3.2em;
+    width: 3.2em;
+    border: 2px solid #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+.circle-outline i {
+    color: WHITE;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+}
+
+.third-container {
+    padding: 1.2em;
+}
+
+.third-container h3 {
+    margin: .6em .3em 0;
+}
+
+.third-container p {
+    font-size: .8em;
+    color: gray;
+    margin-top: 0;
+    text-transform: capitalize;
+}
+
+.fourth-container {
+    padding: 1.2em;
+    background-color: #eae2e2;
+    text-align: left;
+}
+
+.fourth-container .container{
+    display: flex;
+    height: 100%;
+    max-width: 40%;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.fourth-container img {
+    opacity: 1;
+    border-radius: 10px;
+    margin: 1em 2em;
+    align-self: center;
+}
+
+.fourth-container .container .right-container {
+    margin-left: 2em;
+    align-self: center;
+}
+
+.fourth-container .container .right-container ul {
+    margin-top: 3em;
+    padding-left: 1em;
+    line-height: .7;
+}
+
+.fourth-container .container .right-container button {
+    margin-left: .8em;
+}
+
+
+

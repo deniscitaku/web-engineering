@@ -43,7 +43,7 @@ footer {
     display: flex;
 }
 
-.content {
+.tile-container {
     position: absolute;
     background-color: #329da8;
     top:50%;
@@ -54,19 +54,19 @@ footer {
     --divider: 2px solid grey;
 }
 
-.content a {
+.tile-container a {
     padding: .2em 1em .2em;
     font-weight: bold;
     border-left: var(--divider);
 }
 
-.content label {
+.tile-container label {
     margin-top: 1em;
     display: block;
     text-align: center;
 }
 
-.content input {
+.tile-container input {
     margin-bottom: 1em;
     display: block;
     width: 100%;
@@ -75,7 +75,7 @@ footer {
     font-size: .6em;
 }
 
-.content button {
+.tile-container button {
     display: block;
     margin: 1em auto;
     padding: .2em 1em;
@@ -84,6 +84,6 @@ footer {
     background-color: #4caf50;
 }
 
-.content .last-element {
+.tile-container .last-element {
     border-right: var(--divider);
 }
