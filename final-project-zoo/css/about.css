@@ -1,0 +1,13 @@
+.map {
+    margin-top: 2em;
+    padding: 1em;
+    max-width: 80vw;
+    background-color: #dbc0a0;
+    border: solid 3px var(--secondary);
+    border-radius: .1em;
+}
+
+.map > img {
+    height: 100%;
+    width: 100%;
+}

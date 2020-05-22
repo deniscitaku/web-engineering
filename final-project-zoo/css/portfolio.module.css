@@ -1,0 +1,56 @@
+.portfolio {
+    padding: 2em 4em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, max-content));
+    grid-auto-rows: 1fr;
+    grid-gap: 1em;
+    grid-auto-flow: dense;
+    justify-content: center;
+}
+
+.portfolio > figure {
+    grid-row: span 2;
+    grid-column: span 2;
+    display: flex;
+    border: solid white .5em;
+    flex-direction: column;
+    box-shadow: 0 0 .1em 1px #888888;
+    transition: transform .3s;
+    background-color: white;
+    cursor: pointer;
+}
+
+.portfolio > figure:nth-child(odd) {
+    transform: rotate(3deg);
+}
+
+.portfolio > figure:nth-child(even) {
+    transform: rotate(-3deg);
+}
+
+.portfolio > figure:hover {
+    transform: scale(1.2) rotate(0deg);
+    box-shadow: 0 0 .5em 5px #888888;
+}
+
+.portfolio img {
+    flex-grow: 1;
+}
+
+.portfolio figcaption {
+    font-size: 1em;
+    text-transform: capitalize;
+}
+
+.portfolio__modal {
+    display: none;
+}
+
+/* Medium screen */
+@media (min-width: 35em) {
+
+    .portfolio figcaption {
+        font-size: .7em;
+    }
+
+}

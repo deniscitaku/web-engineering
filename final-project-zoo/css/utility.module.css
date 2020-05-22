@@ -1,0 +1,19 @@
+.display-none {
+    display: none !important;
+}
+
+.align-center {
+    text-align: center !important;
+}
+
+.text-white {
+    color: white;
+}
+
+.box-shadow {
+    box-shadow: 0 0 .5em 5px #888888;
+}
+
+.primary-color {
+    color: var(--primary);
+}

@@ -1,0 +1,29 @@
+.grid-container--lg {
+    padding: 3em 5em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-auto-rows: 1fr;
+    grid-gap: 2em;
+    grid-auto-flow: dense;
+}
+
+.grid-container--lg--rotated__section > section:nth-child(odd) {
+    transform: rotate(3deg);
+}
+
+.grid-container--lg--rotated__section > section:nth-child(even) {
+    transform: rotate(-3deg);
+}
+
+.grid-container--lg--rotated__section > section:hover {
+    transform: scale(1.2) rotate(0deg);
+}
+
+.grid-container--md {
+    padding: 3em 5em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-auto-rows: 1fr;
+    grid-gap: 2em;
+    grid-auto-flow: dense;
+}
