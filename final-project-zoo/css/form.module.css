@@ -1,14 +1,16 @@
-form {
+.form {
+    display: flex;
+    flex-direction: column;
     width: 30em;
     margin: 2em auto 30vh;
     background-image: url("../static/images/square-paper-bg.jpg");
-    padding: 2em 9em;
+    padding: 2em 10em;
     box-shadow: 0 0 .2em 2px rgba(136, 136, 136, 0.3);
 }
 
 .input-group {
     position: relative;
-    margin: 2em 0;
+    margin: 1.5em auto;
 }
 
 .input-group > textarea {
@@ -21,7 +23,7 @@ form {
     font-size: .8em;
     padding: .4em .4em .2em .2em;
     display: block;
-    width: 12rem;
+    max-width: 12rem;
     border: none;
     border-radius: 0;
     border-bottom: 1px solid #707070;
@@ -31,30 +33,30 @@ form {
     outline: none;
 }
 
-.input-group > input:focus ~ label, textarea:focus ~ label {
+.input-group > input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
     top: -1em;
     font-size: .5em;
     color: var(--secondary);
 }
 
 .input-group > input:focus ~ .bar:before, textarea:focus ~ .bar:before {
-    width: 12rem;
+    width: 100%;
 }
 
 .input-group > input[type="password"] {
-    letter-spacing: 0.3em;
+    letter-spacing: 0.1em;
 }
 
 .error {
     visibility: hidden;
     color: red;
     font-size: .5rem;
-    padding: .4em 0 0 .4em;
     position: absolute;
-}
-
-.has-error ~ .error {
-    visibility: visible;
+    padding: .3em 0 0 .2em;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 1;
+    text-align: left;
 }
 
 .input-group > label {
@@ -71,7 +73,7 @@ form {
 .bar {
     position: relative;
     display: block;
-    width: 12rem;
+    max-width: 12rem;
 }
 
 .bar:before {
@@ -86,9 +88,7 @@ form {
 }
 
 .btn {
-    font-size: .6em;
-    background: #fff;
-    color: #959595;
+    font-size: .5rem;
     border: none;
     padding: .8em 1.5em;
     border-radius: 3px;
@@ -106,12 +106,12 @@ form {
 }
 
 .btn.btn-submit {
-    background: var(--secondary);
+    background-color: var(--secondary);
     color: white;
 }
 
 .btn.btn-submit:hover {
-    background: var(--primary);
+    background-color: var(--primary);
     color: #deeffd;
 }
 

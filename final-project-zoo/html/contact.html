@@ -40,27 +40,35 @@
         </div>
     </div>
     <div>
-        <form>
-            <div class="input-group">
-                <input class="valid-name" type="text"/>
+        <form class="form">
+            <div id="full-name-input" class="input-group">
+                <input class="valid-name" type="text" required/>
                 <label>Name</label>
                 <span class="bar"></span>
-                <span class="error">Invalid value</span>
+                <span class="error"></span>
             </div>
-            <div class="input-group">
-                <input class="valid-email" type="text"/>
+            <div id="email-input" class="input-group">
+                <input class="valid-email" type="text" required/>
                 <label>Email</label>
                 <span class="bar"></span>
                 <span class="error"></span>
             </div>
-            <div class="input-group">
-                <textarea type="textarea" rows="5"></textarea>
+            <div id="message-input" class="input-group">
+                <textarea type="textarea" rows="5" required></textarea>
                 <label>Message</label>
                 <span class="bar"></span>
                 <span class="error"></span>
             </div>
             <div class="btn-box">
-                <button id="submit" class="btn btn-submit" type="submit">submit</button>
+                <button id="submit"
+                        class="btn btn-submit"
+                        type="button"
+                        onclick="
+                            validateName('full-name-input');
+                        validateEmail('email-input');
+                        validateLength('message-input', 10, 255);
+                        ">submit
+                </button>
             </div>
         </form>
     </div>
@@ -81,5 +89,6 @@
         </div>
     </div>
 </footer>
+<script src="../js/form-validation.js"></script>
 </body>
 </html>
