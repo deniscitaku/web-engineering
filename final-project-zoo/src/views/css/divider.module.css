@@ -1,0 +1,18 @@
+.divider {
+    background-image: url("../../static/images/background-divider.jpeg");
+    min-height: .5em;
+    box-shadow: 0 6px 4px -4px black;
+}
+
+.divider--md-and-lg {
+    display: none;
+}
+
+/** Medium Screen */
+@media (min-width: 35em) {
+
+    .divider--md-and-lg {
+        display: block;
+    }
+
+}

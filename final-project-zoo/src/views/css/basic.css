@@ -1,0 +1,71 @@
+:root {
+    box-sizing: border-box;
+    font-size: calc(1vw + 0.6em);
+    --primary: #775228;
+    --secondary: #67a200;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+
+footer {
+    background-color: #3b3e4a;
+    padding: 2em 4em;
+}
+
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 5em;
+    justify-content: space-around;
+    font-size: 24px;
+}
+
+.contact__info {
+    flex: 2;
+    color: white;
+}
+
+.contact__info > div:first-child {
+    margin-bottom: .5em;
+}
+
+.contact__info > div + div {
+    font-size: 0.5rem;
+}
+
+.contact__social-media {
+    flex: 1;
+}
+
+.contact__social-media img {
+    cursor: pointer;
+}
+
+.primary-button {
+    font-size: .5rem;
+    background-image: url("../../static/images/btn-bg.jpg");
+    padding: .8em 1.5em;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    color: #e3e3e3;
+    border-radius: .2em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.primary-button:hover {
+    color: WHITE;
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12);
+}

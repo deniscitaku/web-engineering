@@ -1,0 +1,43 @@
+.main-bg {
+    padding: 6.5em 1em;
+    text-align: center;
+    background-image: url(../../static/images/jaguar-wallpaper.jpeg);
+    background-size: 100%;
+    color: #fff;
+    text-shadow: 0.1em 0.1em 0.3em #000;
+}
+
+.latest-news {
+    color: white;
+    text-align: center;
+    padding: 5em 8em;
+}
+
+.latest-news .title {
+    font-weight: bold;
+}
+
+.latest-news .subtitle {
+    font-size: .8em;
+    font-weight: lighter;
+}
+
+/** Medium Screen */
+@media (min-width: 35em) {
+
+    .main-bg {
+        padding: 9em 1.5em;
+        font-size: 1.1rem;
+    }
+
+}
+
+/** Large Screen */
+@media (min-width: 70em) {
+
+    .main-bg {
+        padding: 12em 3em;
+        font-size: 1.2rem;
+    }
+
+}

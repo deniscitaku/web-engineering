@@ -1,0 +1,39 @@
+.page-header {
+    padding: 0.4em 1em;
+    background-image: url("../../static/images/header-background-stone.jpg");
+}
+
+.page-header > h1 {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin: 0.2em 0;
+}
+
+.page-header > h1 > a {
+    text-decoration: none;
+}
+
+.page-header > h1 > a {
+    color: #ffffff;
+}
+
+.page-header > div {
+    color: #ececec;
+    font-size: 0.875em;
+    margin: 0;
+}
+
+
+/** Large Screen */
+@media (min-width: 70em) {
+
+    .page-header {
+        padding: .5em 4em;
+    }
+
+    .page-header > h1 {
+        font-size: 2rem;
+    }
+
+}
