@@ -11,53 +11,55 @@
 <body class="login-register">
 <div class="container" id="container">
     <div class="form-container sign-up-container">
-        <form>
+        <form action="../../controller/CreateUserHandler.php" method="post">
             <h2>Create Account</h2>
             <div id="register-full-name" class="input-group">
-                <input type="text" required/>
+                <input name="fullName" type="text" required/>
                 <label>Full name</label>
                 <span class="bar"></span>
                 <span class="error"></span>
             </div>
             <div id="register-email" class="input-group">
-                <input type="text" required/>
+                <input name="email" type="text" required/>
                 <label>Email</label>
                 <span class="bar"></span>
-                <span class="error"></span>
+                <?php echo '<span class="error">'.$usernameFoundErrorMsg.'</span>'?>
             </div>
             <div id="register-password" class="input-group">
-                <input type="password" required/>
+                <input name="password" type="password" required/>
                 <label>Password</label>
                 <span class="bar"></span>
                 <span class="error"></span>
             </div>
             <button class="btn btn-submit"
                     style="margin-top: 2em"
+                    type="submit"
                     onclick="
                     validateName('register-full-name')
                     validateEmail('register-email')
                     validateLength('register-password', 6, 20)
-                    validatePassword('register-password')">Sign Up</button>
+                    validatePassword('register-password')">Sign Up
+            </button>
         </form>
     </div>
     <div class="form-container sign-in-container">
-        <form action="#">
+        <form action="../../controller/UserLoginSession.php" method="get">
             <h2>Sign in</h2>
+            <input type="hidden" name="location" value="<?php echo htmlspecialchars($_GET['location']);?>">
             <div id="login-email" class="input-group">
-                <input type="text" required/>
+                <input name="username" type="text" required/>
                 <label>Email</label>
                 <span class="bar"></span>
                 <span class="error"></span>
             </div>
             <div id="login-password" class="input-group">
-                <input type="password" required/>
+                <input name="password" type="password" required/>
                 <label>Password</label>
                 <span class="bar"></span>
                 <span class="error"></span>
             </div>
-            <a href="#">Forgot your password?</a>
-            <button class="btn btn-submit"
-                    onclick="//TODO check if username exists">Sign In</button>
+            <a>Forgot your password?</a>
+            <button id="submit" class="btn btn-submit">Sign In</button>
         </form>
     </div>
     <div class="overlay-container">

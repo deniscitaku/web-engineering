@@ -1,3 +1,11 @@
+const submitAfterValidation = (id, validations) => {
+    if (id && validations.every(validation => validation())) {
+        console.log('--> Form is valid.')
+        document.getElementById(id).submit();
+    }
+    console.warn('--> Form is not valid!')
+}
+
 const validateName = (id, message = "Invalid name") => {
     const input = getInputById(id);
     const value = input.value;
@@ -22,7 +30,9 @@ const validateLength = (id, min, max, message = `Length must be between ${min} a
     const value = input.value;
 
     const length = value.length;
-    showErrorSpan(id, length > min && length < max, message);
+    let isValid = length > min && length < max;
+    showErrorSpan(id, isValid, message);
+    return isValid;
 }
 
 const validatePassword = (id, message = `Password must contain upper case, lower case and special character`) => {
@@ -35,7 +45,7 @@ const validatePassword = (id, message = `Password must contain upper case, lower
 
 const showErrorSpan = (id, isValid, message) => {
     let errorSpan = document.getElementById(id).getElementsByClassName("error")[0];
-    console.log("ShowErrorSpan: ", isValid, message);
+    console.log(`--> Element with id: ${id} has valid value? `, isValid)
     if (isValid) {
         errorSpan.style.visibility = "hidden"; // Hides the error
     } else {

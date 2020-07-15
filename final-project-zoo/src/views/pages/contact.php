@@ -16,7 +16,7 @@
 <body>
 <header id="header" class="page-header">
     <h1>
-        <a href="home.html">Animal ZOO</a>
+        <a href="home.php">Animal ZOO</a>
     </h1>
     <div>We love animals</div>
 </header>
@@ -24,10 +24,10 @@
     <button class="menu-toggle" id="toggle-menu"></button>
     <div class="menu-dropdown">
         <ul class="nav-menu">
-            <li><a href="news.html">News</a></li>
-            <li><a href="population.html">Population</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="news.php">News</a></li>
+            <li><a href="population.php">Population</a></li>
+            <li><a href="about.php">About</a></li>
+            <li><a href="contact.php">Contact</a></li>
         </ul>
     </div>
 </nav>

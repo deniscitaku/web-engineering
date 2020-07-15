@@ -8,7 +8,7 @@ class AppConfig
     private $password = "root";
     private $connection = null;
 
-    private static $instance;
+    private static $instance = null;
 
     /**
      * AppConfig constructor.
@@ -29,12 +29,10 @@ class AppConfig
     public function getConnection()
     {
         if (!is_null($this->connection)) {
-            echo "Returning cached connection";
             return $this->connection;
         }
         try {
             $this->connection = new PDO($this->host.";".$this->db, $this->user, $this->password);
-            echo "Connected successfully";
         } catch (PDOException $e) {
             echo $e->errorInfo;
         }

@@ -17,7 +17,7 @@
 <body>
 <header id="header" class="page-header">
     <h1>
-        <a href="home.html">Animal ZOO</a>
+        <a href="home.php">Animal ZOO</a>
     </h1>
     <div>We love animals</div>
 </header>
@@ -25,10 +25,10 @@
     <button class="menu-toggle" id="toggle-menu"></button>
     <div class="menu-dropdown">
         <ul class="nav-menu">
-            <li><a href="news.html">News</a></li>
-            <li><a href="population.html">Population</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="news.php">News</a></li>
+            <li><a href="population.php">Population</a></li>
+            <li><a href="about.php">About</a></li>
+            <li><a href="contact.php">Contact</a></li>
         </ul>
     </div>
 </nav>
@@ -43,7 +43,22 @@
 <div class="divider"></div>
 <div class="bg-stone">
     <div style="padding: 2em 4em">
-        <div class="flex-container">
+        <div id="news-container" class="flex-container">
+            <?php
+            require_once '../../business/strategy/UserDao.php';
+
+            $userDao = new UserDao();
+
+            $user = $userDao->findByUsernameOrEmailAndPassword('deniscitaku');
+            $userName = $user->getUsername();
+
+            echo '<section class="news-tile--flex box-shadow opens-modal">
+                <img src="../../static/images/background.jpg"/>
+                <div>'.$user->getUsername().'</div>
+                <p class="news-tile__date">October 17, 2019</p>
+                <p class="display-none">'.$user->getEmail().'</p>
+            </section>';
+            ?>
             <section class="news-tile--flex box-shadow opens-modal">
                 <img src="../../static/images/background.jpg"/>
                 <div>Election Decision</div>

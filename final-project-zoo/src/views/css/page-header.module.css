@@ -1,9 +1,11 @@
 .page-header {
+    display: flex;
     padding: 0.4em 1em;
     background-image: url("../../static/images/header-background-stone.jpg");
 }
 
 .page-header > h1 {
+    flex: 1;
     color: #ffffff;
     text-transform: uppercase;
     font-size: 1.5rem;
@@ -22,6 +24,10 @@
     color: #ececec;
     font-size: 0.875em;
     margin: 0;
+}
+
+.page-header > button {
+    margin-left: auto;
 }
 
 

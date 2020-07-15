@@ -3,6 +3,7 @@
     font-size: calc(1vw + 0.6em);
     --primary: #775228;
     --secondary: #67a200;
+    --danger: #c9385b;
 }
 
 *,

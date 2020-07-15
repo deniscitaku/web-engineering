@@ -62,5 +62,4 @@ class Species extends BaseEntity
     {
         $this->image = $image;
     }
-
 }

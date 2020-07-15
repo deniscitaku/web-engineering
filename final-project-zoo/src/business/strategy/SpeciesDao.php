@@ -43,14 +43,14 @@ class SpeciesDao extends CrudOperations
             ]);
     }
 
-    public function update($data, $id)
+    public function update($data)
     {
         return $this->executeStatement(self::$updateStatement,
             [
                 ':type' => $data->getType(),
                 ':description' => $data->getDescription(),
                 ':image' => $data->getImage(),
-                ':id' => $id
+                ':id' => $data->getId()
             ]);
     }
 

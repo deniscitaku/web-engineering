@@ -175,6 +175,4 @@ class Population extends BaseAuditEntity
         $this->description = $description;
     }
 
-
-
 }

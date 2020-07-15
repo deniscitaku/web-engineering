@@ -29,8 +29,8 @@
     height: 10px;
     margin-top: -5px;
     top: 50%;
-    left: 35%;
-    right: 35%;
+    left: 30%;
+    right: 30%;
 }
 
 .create-new-tile--grid > div::before {

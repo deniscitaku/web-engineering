@@ -58,7 +58,7 @@ class PopulationDao extends CrudOperations
             ]);
     }
 
-    public function update($data, $id)
+    public function update($data)
     {
         return $this->executeStatement(self::$insertStatement,
             [
@@ -76,12 +76,12 @@ class PopulationDao extends CrudOperations
                 ':created_by' => $data->getCreatedBy(),
                 ':updated_on' => $data->getUpdatedOn(),
                 ':updated_by' => $data->getUpdatedBy(),
-                ':id' => $id
+                ':id' => $data->getId()
             ]);
     }
 
     public function delete($id)
     {
-        return $this->executeStatement(self::$deleteStatement, [':id'=>$id]);
+        return $this->executeStatement(self::$deleteStatement, [':id' => $id]);
     }
 }

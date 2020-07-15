@@ -1,12 +1,12 @@
 <?php
 
-include_once "BaseAuditEntity.php";
+require_once "BaseAuditEntity.php";
 
 class News extends BaseAuditEntity
 {
     private $title;
     private $content;
-    private $image_path;
+    private $image;
 
     /**
      * @return mixed
@@ -43,17 +43,16 @@ class News extends BaseAuditEntity
     /**
      * @return mixed
      */
-    public function getImagePath()
+    public function getImage()
     {
-        return $this->image_path;
+        return $this->image;
     }
 
     /**
-     * @param mixed $image_path
+     * @param mixed $image
      */
-    public function setImagePath($image_path)
+    public function setImage($image)
     {
-        $this->image_path = $image_path;
+        $this->image = $image;
     }
-
 }

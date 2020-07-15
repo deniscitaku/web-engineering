@@ -99,6 +99,10 @@
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+.btn:nth-child(n+2) {
+    margin-left: 1em;
+}
+
 .btn:hover {
     color: #8b8b8b;
     box-shadow: 0 7px 14px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12);
@@ -114,7 +118,18 @@
     color: #deeffd;
 }
 
+.btn.btn-delete {
+    background-color: var(--danger);
+    color: white;
+}
+
+.btn.btn-delete:hover {
+    background-color: #a12d49;
+    color: #deeffd;
+}
+
 .btn-box {
+    display: flex;
     text-align: center;
     margin: 50px 0;
 }

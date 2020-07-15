@@ -1,12 +1,12 @@
 <?php
-include_once "BaseEntity.php";
+require_once "BaseEntity.php";
 
 abstract class BaseAuditEntity extends BaseEntity
 {
-    private $created_on;
-    private $updated_on;
-    private $created_by;
-    private $updated_by;
+    protected $created_on;
+    protected $updated_on;
+    protected $created_by;
+    protected $updated_by;
 
     /**
      * @return mixed
@@ -70,5 +70,9 @@ abstract class BaseAuditEntity extends BaseEntity
     public function setUpdatedBy($updated_by)
     {
         $this->updated_by = $updated_by;
+    }
+
+    public function getFormattedCreatedOn() {
+        return date("d M, Y", strtotime($this->created_on));
     }
 }

@@ -1,11 +1,10 @@
 <?php
 
-include "BaseEntity.php";
+include_once "BaseEntity.php";
 
 class User extends BaseEntity
 {
-    private $name;
-    private $surname;
+    private $fullName;
     private $username;
     private $email;
     private $password;
@@ -14,33 +13,17 @@ class User extends BaseEntity
     /**
      * @return mixed
      */
-    public function getName()
+    public function getFullName()
     {
-        return $this->name;
+        return $this->fullName;
     }
 
     /**
-     * @param mixed $name
+     * @param mixed $fullName
      */
-    public function setName($name)
+    public function setFullName($fullName)
     {
-        $this->name = $name;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSurname()
-    {
-        return $this->surname;
-    }
-
-    /**
-     * @param mixed $surname
-     */
-    public function setSurname($surname)
-    {
-        $this->surname = $surname;
+        $this->fullName = $fullName;
     }
 
     /**
@@ -107,7 +90,10 @@ class User extends BaseEntity
         $this->role = $role;
     }
 
-    function __toString(){
-        return $this->username ? $this->username : "No name";
+    public function __toString()
+    {
+        return 'Id: '.$this->getId() . ', Username: ' .$this->username;
     }
+
+
 }

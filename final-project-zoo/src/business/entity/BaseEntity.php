@@ -3,7 +3,7 @@
 
 abstract class BaseEntity
 {
-    private $id;
+    protected $id;
 
     /**
      * @return mixed

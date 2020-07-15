@@ -13,6 +13,8 @@ for (let i = 0; i < buttons.length; i++) {
         modal.style.display = 'block';
     });
 }
+var xhttp = new XMLHttpRequest();
+xhttp.open();
 close.addEventListener('click', function (event) {
     event.preventDefault();
     modal.style.display = 'none';

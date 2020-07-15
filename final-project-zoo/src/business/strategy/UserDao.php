@@ -1,28 +1,44 @@
 <?php
 
-include_once '../boundary/CrudOperations.php';
-include_once '../entity/User.php';
+require_once(__DIR__.'/../boundary/CrudOperations.php');
+require_once(__DIR__.'/../entity/User.php');
 
 class UserDao extends CrudOperations
 {
     private static $findAllStatement =
         'SELECT * FROM users';
 
+    public static $findByUsernameOrEmailAndPasswordStatement =
+        'SELECT * FROM users WHERE (username = :usernameOrEmail OR email = :usernameOrEmail) AND password = :password';
+
     public static $findByUsernameOrEmailStatement =
-        'SELECT * FROM users WHERE username = :usernameOrEmail OR email = :usernameOrEmail';
+        'SELECT * FROM users WHERE (username = :usernameOrEmail OR email = :usernameOrEmail)';
 
     private static $insertStatement =
-        'INSERT INTO users (name, surname, username, email, password, role) VALUES (:name, :surname, :username, :email, :password, :role)';
+        'INSERT INTO users (full_name, username, email, password, role) VALUES (:name, :username, :email, :password, :role)';
 
     private static $updateStatement =
-        'UPDATE users SET name = :name, surname = :surname, username = :username, email = :email, password= :password, role = :role WHERE id = :id';
+        'UPDATE users SET full_name = :name, username = :username, email = :email, password= :password, role = :role WHERE id = :id';
 
     private static $deleteByIdStatement =
         'DELETE FROM users WHERE id = :id';
 
+    public function findByUsernameOrEmailAndPassword($usernameOrEmail, $password)
+    {
+        return $this->executeStatement(self::$findByUsernameOrEmailAndPasswordStatement,
+            [
+                ':usernameOrEmail' => $usernameOrEmail,
+                ':password' => $password
+            ])
+            ->fetchObject('User');
+    }
+
     public function findByUsernameOrEmail($usernameOrEmail)
     {
-        return $this->executeStatement(self::$findByUsernameOrEmailStatement, [':usernameOrEmail' => $usernameOrEmail])
+        return $this->executeStatement(self::$findByUsernameOrEmailStatement,
+            [
+                ':usernameOrEmail' => $usernameOrEmail
+            ])
             ->fetchObject('User');
     }
 
@@ -35,8 +51,7 @@ class UserDao extends CrudOperations
     {
         return $this->executeStatement(self::$insertStatement,
             [
-                ':name' => $data->getName(),
-                ':surname' => $data->getSurname(),
+                ':name' => $data->getFullName(),
                 ':username' => $data->getUsername(),
                 ':email' => $data->getEmail(),
                 ':password' => $data->getPassword(),
@@ -45,16 +60,15 @@ class UserDao extends CrudOperations
             ]);
     }
 
-    public function update($data, $id)
+    public function update($data)
     {
         return $this->executeStatement(self::$updateStatement, [
-            ':name' => $data->getName(),
-            ':surname' => $data->getSurname(),
+            ':name' => $data->getFullName(),
             ':username' => $data->getUsername(),
             ':email' => $data->getEmail(),
             ':password' => $data->getPassword(),
             ':role' => $data->getRole(),
-            ':id' => $id
+            ':id' => $data->getId()
         ]);
     }
 
